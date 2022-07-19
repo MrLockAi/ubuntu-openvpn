@@ -54,4 +54,6 @@ sudo openvpn --config client.ovpn
 ```
 netstat -nr
 ```
-
+auto start
+```
+sudo systemctl enable openvpn@client.service
