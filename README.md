@@ -25,27 +25,33 @@ paste code berikut
 client
 dev tun
 proto tcp
-remote example.com 1194
+remote host.fituradv.site 1194
 resolv-retry infinite
 nobind
 persist-key
 persist-tun
-ca ca.crt
-cert client.crt
-key client.key
+ca /etc/openvpn/client/cert/ca.crt
+cert /etc/openvpn/client/cert/client.crt
+key /etc/openvpn/client/cert/client.key
 remote-cert-tls server
 cipher AES-128-CBC
 auth SHA1
 auth-user-pass
 redirect-gateway def1
 ```
+5. Copy ke root
+```
+cp client.ovpn /root
+```
 
-5. Tancap Gas
+7. 
+8. Tancap Gas
 ```
 sudo openvpn --config client.ovpn
 ```
 
-6. cek routing
+7. cek routing
 ```
 netstat -nr
 ```
+
